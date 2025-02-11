@@ -440,6 +440,64 @@
                 padding: 15px;
             }
         }
+            /* Reviews Section Styles */
+
+        /* Reviews Section Styles */
+            .reviews-section {
+                padding: 40px 20px;
+                background-color: #f8e3b6;
+                color: #31322d;
+                text-align: center;
+                font-family: 'Kanit', serif;
+                font-weight: 300;
+            }
+
+            .reviews-rating {
+                font-size: 2em;
+                margin-bottom: 30px;
+            }
+
+            .reviews-carousel {
+                display: flex;
+                overflow: hidden;
+                white-space: nowrap;
+                animation: scroll 15s linear infinite;
+            }
+
+            .review {
+                display: inline-block;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                max-width: 300px;
+                margin: 0 10px;
+            }
+
+            .review-text {
+                font-size: 1.1em;
+                margin-bottom: 10px;
+            }
+
+            .review-stars {
+                font-size: 1.5em;
+                color: #FFD700; /* Gold color for stars */
+                margin-bottom: 10px;
+            }
+
+            .review-author {
+                font-size: 1em;
+                color: #666;
+            }
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+    }
 
         .menu li:nth-child(1) { transition-delay: 0.1s; }
         .menu li:nth-child(2) { transition-delay: 0.2s; }
@@ -476,7 +534,7 @@
         <img src="https://media.istockphoto.com/id/1400194993/photo/cappuccino-art.jpg?s=612x612&w=0&k=20&c=_nYOcyQ15cYEeUYgUzkC5qG946nkCwU06NiWKt1s8SE=" alt="Coffee Art" class="hero-image">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">PLACE<br> PLACE & HOLDER</h1>
+            <h1 class="hero-title">PLACE <br> PLACE & PLACEHOLDER</h1>
             <p class="hero-text">This is placeholder text<br>Change this text later</p>
             <div class="hero-buttons">
                 <button class="hero-button"><span>MENU</span></button>
@@ -529,6 +587,18 @@
                     <div class="slider-dot"></div>
                 </div>
                 <button class="next">&gt;</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero-section">
+        <img src="https://st4.depositphotos.com/1875497/29420/i/450/depositphotos_294209826-stock-photo-abstract-blur-coffee-shop-cafe.jpg" alt="Placeholder Image" class="hero-image">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">TASTE THE <br> PASSION, <br> PLACEHOLDER <br> TEXT</h1>
+            <p class="hero-text">this is placeholder content <br> this is placeholder</p>
+            <div class="hero-buttons">
+                <button class="hero-button"><span>ABOUT US</span></button>
             </div>
         </div>
     </section>
@@ -599,5 +669,9 @@
         showSlide(currentIndex);
         startAutoScroll();
     </script>
+
+<footer style="background-color: #31322d; color: white; text-align: center; padding: 10px 0; font-family: 'Kanit', serif; font-weight: 300;">
+    2025 Ben's Baker
+</footer>
 </body>
 </html>
