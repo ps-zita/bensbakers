@@ -4,7 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar with Animated Hamburger Menu</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #31322d;
+            padding: 10px 20px;
+            height: 60px;
+            z-index: 1000;
+        }
+
+        .navbar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.textures4photoshop.com/tex/thumbs/seamless-texture-crumpled-paper-free-thumb36.jpg') repeat;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .hamburger {
+            position: absolute;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .bar {
+            width: 100%;
+            height: 4px;
+            background-color: white;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        .logo {
+            z-index: 0;
+            height: 134%;
+        }
+
+        .logo img {
+            height: 100%;
+        }
+
+        /* Animation states */
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(49, 50, 45, 0.98);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 999;
+        }
+
+        .menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .menu li {
+            padding: 20px;
+            color: white;
+            font-size: 24px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .menu.active li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered animation for menu items */
+        .menu li:nth-child(1) { transition-delay: 0.1s; }
+        .menu li:nth-child(2) { transition-delay: 0.2s; }
+        .menu li:nth-child(3) { transition-delay: 0.3s; }
+        .menu li:nth-child(4) { transition-delay: 0.4s; }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -25,6 +143,24 @@
             <li>Contact</li>
         </ul>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.menu');
+        const menuItems = document.querySelectorAll('.menu li');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            menu.classList.toggle('active');
+        });
+
+        // Optional: Close menu when clicking a menu item
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                menu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
