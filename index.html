@@ -14,6 +14,46 @@
             font-family: Arial, sans-serif;
         }
 
+        .notification-bar {
+            background-color: #f8e3b6;
+            color: #31322d;
+            text-align: center;
+            padding: 8px 20px;
+            font-family: "Kanit", serif;
+            font-weight: 300;
+            font-size: 14px;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .notification-bar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.textures4photoshop.com/tex/thumbs/seamless-texture-crumpled-paper-free-thumb36.jpg') repeat;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        .notification-text {
+            display: inline-block;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
         .kanit-light {
             font-family: "Kanit", serif;
             font-weight: 300;
@@ -165,6 +205,11 @@
     </style>
 </head>
 <body>
+    <div class="notification-bar">
+        <div class="notification-text">
+            <span class="kanit-light">✨ New menu item! placeholder text! ✨</span>
+        </div>
+    </div>
     <nav class="navbar">
         <div class="hamburger">
             <div class="bar"></div>
