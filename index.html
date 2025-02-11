@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar with Animated Hamburger Menu</title>
-    <!-- Add Google Fonts - Kanit (300 weight for light) -->
+    <title>Coffee Shop</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
@@ -112,7 +111,6 @@
             height: 100%;
         }
 
-        /* Animation states */
         .hamburger.active .bar:nth-child(1) {
             transform: translateY(8px) rotate(45deg);
         }
@@ -197,7 +195,252 @@
             transform: translateY(0);
         }
 
-        /* Staggered animation for menu items */
+        .hero-section {
+            position: relative;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(49, 50, 45, 0.6);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            margin-left: 5%;
+            max-width: 500px;
+        }
+
+        .hero-title {
+            font-family: "Kanit", serif;
+            font-weight: 300;
+            font-size: 2em;
+            margin: 0 0 15px 0;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        .hero-text {
+            font-family: "Kanit", serif;
+            font-weight: 300;
+            font-size: 1em;
+            margin: 0 0 30px 0;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: flex-start;
+        }
+
+        .hero-button {
+            background-color: #31322d;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-family: "Kanit", serif;
+            font-weight: 300;
+            font-size: 1.2em;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: fit-content;
+        }
+
+        .hero-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .hero-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.textures4photoshop.com/tex/thumbs/seamless-texture-crumpled-paper-free-thumb36.jpg') repeat;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .hero-button span {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Picks Section Styles */
+        .picks-section {
+            padding: 40px 20px;
+            background-color: #31322d;
+            color: white;
+            position: relative;
+        }
+
+        .picks-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.textures4photoshop.com/tex/thumbs/seamless-texture-crumpled-paper-free-thumb36.jpg') repeat;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .picks-title {
+            font-family: "Kanit", serif;
+            font-weight: 300;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .slider-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%;
+        }
+
+        .slides {
+            display: flex;
+            gap: 20px;
+            padding: 0 10px;
+            width: 100%;
+        }
+
+        .slide {
+            min-width: calc(50% - 20px);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .slide:hover {
+            transform: translateY(-5px);
+        }
+
+        .slide-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .slide-content {
+            padding: 15px;
+            font-family: "Kanit", serif;
+        }
+
+        .slide-title {
+            font-size: 1.2em;
+            margin: 0 0 5px 0;
+        }
+
+        .slide-price {
+            font-size: 1.1em;
+            color: #f8e3b6;
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .slider-nav .prev,
+        .slider-nav .next {
+            background-color: #f8e3b6;
+            color: #31322d;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-family: "Kanit", serif;
+            font-weight: 300;
+            transition: background-color 0.3s ease;
+        }
+
+        .slider-nav .prev:hover,
+        .slider-nav .next:hover {
+            background-color: #e0c895;
+        }
+
+        .slider-dot-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background: #f8e3b6;
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                min-width: calc(100% - 20px);
+            }
+            
+            .hero-title {
+                font-size: 1.5em;
+            }
+
+            .hero-content {
+                margin-left: 20px;
+                padding: 15px;
+            }
+        }
+
         .menu li:nth-child(1) { transition-delay: 0.1s; }
         .menu li:nth-child(2) { transition-delay: 0.2s; }
         .menu li:nth-child(3) { transition-delay: 0.3s; }
@@ -228,24 +471,133 @@
             <li><a href="#contact" class="kanit-light">Contact</a></li>
         </ul>
     </div>
+    
+    <section class="hero-section">
+        <img src="https://media.istockphoto.com/id/1400194993/photo/cappuccino-art.jpg?s=612x612&w=0&k=20&c=_nYOcyQ15cYEeUYgUzkC5qG946nkCwU06NiWKt1s8SE=" alt="Coffee Art" class="hero-image">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">PLACE PLACE & HOLDER</h1>
+            <p class="hero-text">This is placeholder text<br>Change this text later</p>
+            <div class="hero-buttons">
+                <button class="hero-button"><span>MENU</span></button>
+                <button class="hero-button"><span>CONTACT</span></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="picks-section">
+        <h2 class="picks-title">OUR PICKS</h2>
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772" alt="Coffee 1" class="slide-image">
+                        <div class="slide-content">
+                            <h3 class="slide-title">Signature Latte</h3>
+                            <p class="slide-price">$4.50</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSVYAb9l2oOQ4iRwqARLLwHoTuyZgY9RKT0Q&s" alt="Placeholder Image" class="slide-image">
+                        <div class="slide-content">
+                            <h3 class="slide-title">Caramel Macchiato</h3>
+                            <p class="slide-price">$5.00</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085" alt="Coffee 3" class="slide-image">
+                        <div class="slide-content">
+                            <h3 class="slide-title">Cappuccino</h3>
+                            <p class="slide-price">$3.75</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSVYAb9l2oOQ4iRwqARLLwHoTuyZgY9RKT0Q&s" alt="Placeholder Image" class="slide-image">
+                        <div class="slide-content">
+                            <h3 class="slide-title">Placeholder Coffee</h3>
+                            <p class="slide-price">$0.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-nav">
+                <button class="prev">&lt;</button>
+                <div class="slider-dot-container">
+                    <div class="slider-dot"></div>
+                    <div class="slider-dot"></div>
+                    <div class="slider-dot active"></div>
+                    <div class="slider-dot"></div>
+                </div>
+                <button class="next">&gt;</button>
+            </div>
+        </div>
+    </section>
 
     <script>
-        const hamburger = document.querySelector('.hamburger');
-        const menu = document.querySelector('.menu');
-        const menuItems = document.querySelectorAll('.menu li');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            menu.classList.toggle('active');
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.menu').classList.toggle('active');
         });
 
-        // Optional: Close menu when clicking a menu item
-        menuItems.forEach(item => {
-            item.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                menu.classList.remove('active');
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        let currentIndex = 0;
+        let autoScrollInterval;
+
+        function showSlide(index) {
+            const sliderWrapper = document.querySelector('.slider-wrapper');
+            if (window.innerWidth <= 768) {
+                sliderWrapper.style.transform = `translateX(${-index * 100}%)`;
+            } else {
+                sliderWrapper.style.transform = `translateX(${-index * 50}%)`;
+            }
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+        }
+
+        function updateIndex(delta) {
+            currentIndex += delta;
+            if (currentIndex < 0) {
+                currentIndex = slides.length - 1;
+            } else if (currentIndex >= slides.length) {
+                currentIndex = 0;
+            }
+            showSlide(currentIndex);
+        }
+
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(() => updateIndex(1), 3000);
+        }
+
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                showSlide(index);
+                stopAutoScroll();
+                startAutoScroll();
             });
         });
+
+        prevButton.addEventListener('click', () => {
+            updateIndex(-1);
+            stopAutoScroll();
+            startAutoScroll();
+        });
+
+        nextButton.addEventListener('click', () => {
+            updateIndex(1);
+            stopAutoScroll();
+            startAutoScroll();
+        });
+
+        showSlide(currentIndex);
+        startAutoScroll();
     </script>
 </body>
 </html>
