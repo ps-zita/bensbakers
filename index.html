@@ -4,10 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar with Animated Hamburger Menu</title>
+    <!-- Add Google Fonts - Kanit (300 weight for light) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+        }
+
+        .kanit-light {
+            font-family: "Kanit", serif;
+            font-weight: 300;
+            font-style: normal;
         }
 
         .navbar {
@@ -55,7 +65,7 @@
 
         .logo {
             z-index: 0;
-            height: 133%;
+            height: 134%;
         }
 
         .logo img {
@@ -81,7 +91,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(49, 50, 45, 0.98);
+            background-color: #31322d;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -91,7 +101,6 @@
             z-index: 999;
         }
 
-        /* Added paper texture to menu */
         .menu::before {
             content: "";
             position: absolute;
@@ -110,7 +119,6 @@
             visibility: visible;
         }
 
-        /* Show paper texture when menu is active */
         .menu.active::before {
             opacity: 0.3;
         }
@@ -126,11 +134,22 @@
 
         .menu li {
             padding: 20px;
-            color: white;
-            font-size: 24px;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .menu li a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            font-family: "Kanit", serif;
+            font-weight: 300;
+            transition: color 0.3s ease;
+        }
+
+        .menu li a:hover {
+            color: #cccccc;
         }
 
         .menu.active li {
@@ -158,10 +177,10 @@
     </nav>
     <div class="menu">
         <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Services</li>
-            <li>Contact</li>
+            <li><a href="#" class="kanit-light">Home</a></li>
+            <li><a href="#about" class="kanit-light">About</a></li>
+            <li><a href="#menu" class="kanit-light">Menu</a></li>
+            <li><a href="#contact" class="kanit-light">Contact</a></li>
         </ul>
     </div>
 
